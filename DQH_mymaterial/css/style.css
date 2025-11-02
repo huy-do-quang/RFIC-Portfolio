@@ -1,0 +1,935 @@
+/*==================== 1. GLOBAL RESET & VARIABLES ====================*/
+
+/* --- CSS Reset --- */
+* {
+    margin: 0; /* Remove default margin from all elements */
+    padding: 0; /* Remove default padding from all elements */
+    box-sizing: border-box; /* Crucial: ensures padding/border are included in width/height */
+}
+
+/* --- Global Variables --- */
+:root {
+    /* Colors (Inspired by dark theme with gold accent) */
+    --clr-background: #141414;      /* Deep background color */
+    --clr-surface: #1e1e1e;         /* Slightly lighter for cards and boxes */
+    --clr-primary: #007bff;         /* Blue for primary actions/links (clean contrast) */
+    --clr-accent: #ffb700;          /* Gold/Amber color for strong highlights (your name, focus) */
+    --clr-text-light: #f0f0f0;      /* Main text color */
+    --clr-text-secondary: #aaaaaa;  /* Gray for dates, details, and captions */
+    --clr-divider: #333333;         /* Separator lines */
+    --clr-gray: #2b2b2b
+
+    /* Spacing & Shadow */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.25); /* Subtle shadow for depth */
+}
+
+/* --- Global Base Styles --- */
+/* Sets the dark background (--clr-background), light text color (--clr-text-light), and the default font family for all content. */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--clr-background);
+    color: var(--clr-text-light);
+    line-height: 1.6; /* Improves readability */
+}
+
+
+
+/*==================== 2. MAIN LAYOUT AND TITLES ====================*/
+
+/* --- Main Page Container --- */
+/* Limits the total content width (max-width: 1200px;) and centers the content horizontally on the page. */
+main {
+    max-width: 1200px; /* Limits the width for readability */
+    margin: 0 auto; /* Centers the main content horizontally */
+    padding: var(--space-lg); /* Padding on the sides */
+}
+
+/* --- Section Formatting --- */
+/* Adds consistent top/bottom spacing and a gray separator line (border-bottom) between major content areas. */
+section {
+    padding: var(--space-lg) 0 var(--space-lg); /* Top/bottom spacing for sections */
+    border-bottom: 1px solid var(--clr-divider); /* Separator line between sections */
+}
+
+.section-header-flex {
+    display: flex;
+    /* Pushes the title to the left and the buttons to the right */
+    justify-content: space-between; 
+    align-items: center; /* Vertically centers the items */
+}
+
+/* --- Section Titles (e.g., "Featured Projects / Publications") --- */
+/* Styles the main headings (e.g., "Featured Projects / Publications") with blue text (--clr-primary) and a prominent gold underline (border-bottom: 3px solid var(--clr-accent);). */
+.section-title {
+    font-size: 2.5rem;
+    color: var(--clr-primary); /* Use blue for a strong, clean title color */
+    text-align: left;
+    margin-bottom: var(--space-md);
+    
+    /* Design element similar to the reference portfolio: */
+    border-bottom: 3px solid var(--clr-accent); /* Gold line under the title */
+    display: inline-block; /* Allows the border to only span the text width */
+    padding-bottom: var(--space-sm);
+    text-transform: uppercase;   
+}
+
+.education-section, .contact-section, .skills-section {
+    /* Center the text content and links within the section */
+    text-align: center; 
+}
+
+
+
+
+/* Styling for the Arrow Buttons */
+.scroll-arrow {
+    /* Remove absolute positioning and z-index now that they are in the flow */
+    position: relative; 
+    
+    /* Appearance */
+    background: transparent; /* Transparent background */
+    color: var(--clr-accent); /* Gold arrow color */
+    border: 1px solid var(--clr-accent); /* Small gold border */
+    padding: 5px 10px; /* Reduced padding */
+    cursor: pointer;
+    font-size: 1.2rem; /* Reduced size */
+    line-height: 1;
+    border-radius: 4px; /* Small rounded corners */
+    margin-left: var(--space-sm); /* Add spacing between the two buttons */
+    transition: background-color 0.3s;
+}
+
+.scroll-arrow:hover {
+    background: var(--clr-accent);
+    color: var(--clr-background); /* Dark text/icon on gold hover */
+}
+
+/* --- Link Base Styles --- */
+/* Removes the default underline (text-decoration: none;) and sets the default link color to blue (--clr-primary). Changes link color to gold on hover. */
+a {
+    color: var(--clr-primary);
+    text-decoration: none; /* Remove the default underline */
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--clr-accent); /* Links turn gold on hover */
+}
+
+/*==================== ANCHOR LINK SCROLL FIX ====================*/
+
+/* Target ALL sections that are jumped to using an anchor link (#home, #education, etc.). 
+The value should be small.
+*/
+section[id] {
+    scroll-margin-top: 1rem; 
+}
+
+/* ==================== 3. CARD AND GRID LAYOUTS ==================== */
+
+/* --- Base Style for All Cards --- */
+/* Defines the shared card appearance: dark surface background, rounded corners, subtle shadow */
+.card, .project-card, .education-card, .experience-card {
+    background-color: #2b2b2b;
+    padding: var(--space-lg);
+    border-radius: 15px; /* Slightly rounded corners */
+    box-shadow: var(--shadow-light); /* Adds depth */
+    
+    /* Unique design touch: a thick left border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* For hover effect */
+}
+
+/* --- Individual Card Sizing and Prevention of Shrinking --- */
+.experience-card, .project-card {
+    /* Critical: Ensures cards maintain their minimum size and don't shrink */
+    flex-shrink: 0; 
+    
+    /* Define the minimum width you want for the card */
+    min-width: 320px; /* Example: A comfortable size for viewing card content */
+    
+    
+    /* ADD these Flexbox properties to enable bottom-alignment */
+    display: flex; 
+    flex-direction: column; /* Stacks children vertically */
+
+    
+    /* Ensure the card can grow if space is available but respects min-width */
+    width: 350px; /* You can set a fixed target width slightly larger than min-width */
+}
+
+.experience-description {
+    /* Set the alignment to justify */
+    text-align: justify;
+    
+    /* Ensure no margin/padding interference from the list itself */
+    /* padding-left: var(--space-md);  */
+    list-style-type: disc; /* Ensure bullets are still visible */
+}
+
+.experience-info, .project-info, .education-info {
+    /* Critical: Tells this container to take up all leftover vertical space */
+    flex-grow: 1; 
+    
+    /* Add some bottom margin to create space before the button */
+    margin-bottom: var(--space-md); 
+
+    display: flex;
+    flex-direction: column; /* Stack the content inside project-info vertically */
+    justify-content: flex-end; /* CRITICAL: This pushes the date/tags to the bottom of the project-info area */
+}
+
+#skills-container.skills-grid {
+    display: grid;
+    /* Create a responsive grid: 2 columns for large screens, flexible for small screens */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: var(--space-xl, 30px); /* Space between the skill groups */
+    margin-top: var(--space-lg);
+}
+
+.skill-group {
+    padding: var(--space-lg);
+    border: 1px solid var(--clr-divider, #e0e0e0);
+    border-radius: 8px;
+    background-color: var(--clr-card-background, #f9f9f9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+.skill-group h3 {
+    font-size: 1.25rem;
+    border-bottom: 3px solid var(--clr-text-light); /* Underline the title */
+    padding-bottom: var(--space-sm);
+    margin-top: 0;
+    margin-bottom: var(--space-md); /* Space below the title */
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows tags to wrap cleanly to the next line */
+    gap: var(--space-sm, 10px); /* Consistent spacing between tags */
+}
+
+/* Styling for the individual skill tag */
+.skill-tag {
+    /* 1. Appearance: Define the background, text color, and border-radius */
+    background-color: var(--clr-tag-background, #e0e0e0); /* Light grey background (or your preferred accent color) */
+    color: var(--clr-tag-text, #333);                  /* Dark text color for contrast */
+    border-radius: 4px;                                /* Rounded corners for the tag shape */
+    
+    /* 2. Spacing: Add internal padding */
+    padding: 3px 8px;                                  /* Vertical and horizontal padding */
+    
+    /* 3. Typography: Adjust font size and weight */
+    font-size: 0.8rem;                                 /* Make the text slightly smaller */
+    font-weight: 600;                                  /* Make the text bold */
+    text-transform: uppercase;                         /* Optional: Helps them stand out */
+    
+    /* 4. Layout: Ensure they sit next to each other */
+    display: inline-block;                             /* Allows them to sit side-by-side */
+    
+    /* Optional: Small box shadow for depth */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Target the .skill-tag only when it is inside the #skills-container */
+#skills-container .skill-tag {
+    /* 1. Typography: Increase the font size */
+    font-size: 1rem; /* Increased from 0.8rem */
+    font-weight: 600;   /* Optionally lessen the weight to look cleaner when bigger */
+    text-transform: capitalize; /* Optional: Capitalize instead of ALL CAPS, looks softer */
+
+    /* 2. Spacing: Increase internal padding to match the larger font */
+    padding: 5px 12px; /* Increased padding */
+    
+    /* 3. Appearance (Optional: Adjust color/shadow if needed for a bigger tag) */
+    box-shadow: none; /* Remove shadow for a flatter, cleaner look */
+}
+
+/* Ensure the wrapper uses a sufficient gap for the larger tags */
+#skills-container .skill-list {
+    gap: 12px; /* Increase the gap to accommodate larger tags cleanly */
+}
+
+/* Styling for the container to manage horizontal spacing */
+.project-tags {
+    display: flex;       /* Use flexbox for easy layout */
+    flex-wrap: wrap;     /* Allows tags to wrap to the next line if too many */
+    gap: var(--space-sm, 8px); /* Adds consistent space between tags */
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-sm); /* Add margin to separate from description/button */
+    
+}
+
+
+/* Center the Company Name */
+.experience-company {
+    /* Set text alignment to center */
+    text-align: center; 
+    
+    /* Ensure any previous bottom margin is set appropriately */
+    margin-bottom: var(--space-sm); 
+}
+
+
+/* Creates the visual interactive effect: the card lifts up slightly (transform: translateY(-5px);) and the shadow intensifies. */
+.card:hover, .project-card:hover {
+    transform: translateY(-5px); /* Card lifts up slightly on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+/* --- Grid for Multiple Cards (Projects, Skills, etc.) --- */
+/* Creates a responsive, flexible grid layout that arranges cards into columns (grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));). */
+.cards-grid {
+    /* 1. Reset any grid-specific rules for this horizontal layout */
+    display: flex; /* Use flexbox for horizontal layout */
+    /* 2. Hide any cards that overflow the screen width, and allow scrolling */
+    overflow-x: auto;
+    /* 3. Prevent cards from wrapping to a second line */
+    flex-wrap: nowrap;
+    /* Maintain the spacing between cards */
+    gap: var(--space-lg); 
+    padding-bottom: var(--space-md); /* Add padding for the scrollbar */
+    -webkit-overflow-scrolling: touch; /* Better scrolling performance on iOS */
+
+}
+
+/* --- Standard Responsive Grid (For Education/Projects) --- */
+#education-container.cards-grid { /* Target the container specifically */
+    display: grid; 
+    /* The 1fr ensures all columns take equal width */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: var(--space-lg);
+}
+
+
+
+
+
+
+/* --- School Logo Styling --- */
+
+.HUST-logo, .KHU-logo {
+    width: 100%;
+    height: 200px;
+    display: block; /* Make it take up its own line */
+    margin: 0 auto var(--space-sm); /* Center the logo above the text */
+    object-fit: contain;
+}
+
+
+.KHU-ex-logo, .BKAPEMA-ex-logo,.VMN-ex-logo,.SELEX-ex-logo,
+.project1-logo, .project2-logo, .project3-logo, .project4-logo, .project5-logo,
+.project6-logo, .project7-logo, .project8-logo {
+    width: 100%;
+    height: 150px;
+    display: block; /* Make it take up its own line */
+    margin: 0 auto var(--space-sm); /* Center the logo above the text */
+    object-fit: contain;
+}
+
+
+/* --- Card Button Styling --- */
+/* Container for the button */
+.card-btn-link {
+
+    display: block; 
+    margin-top: var(--space-sm);
+    text-align: center;
+}
+
+.card-btn {
+    padding: var(--space-sm) var(--space-lg);
+    background-color: var(--clr-primary); /* Blue background */
+    color: var(--clr-text-light); /* Light text */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make the button fill the width of the card */
+}
+
+.card-btn:hover {
+    background-color: var(--clr-accent); /* Button turns gold on hover */
+    color: var(--clr-background); /* Dark text for contrast on gold */
+}
+
+.card-btn:hover {
+    background-color: var(--clr-accent); /* Button turns gold on hover */
+    color: var(--clr-background); /* Dark text for contrast on gold */
+}
+
+/* Clear the float from the logo inside the card to ensure the button is below it */
+.education-card {
+    display: flex;       /* Make the card a flexible container */
+    flex-direction: column; /* Stack header, info, and button vertically */
+}
+
+
+
+/*==================== 4. HEADER & PROFILE STYLING ====================*/
+
+/* Makes the navigation bar sticky (position: sticky;) at the top of the screen and applies the dark background and shadow. */
+header {
+    background-color: var(--clr-surface); /* Uses the dark gray color */
+    position: sticky; /* Makes the header stick to the top */
+    top: 0; /* Ensures it sticks right at the top edge */
+    z-index: 1000; /* Makes sure the header sits above all other content */
+    border-bottom: 2px solid var(--clr-divider);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Arranges the logo (left) and links (right) horizontally (display: flex; justify-content: space-between;) 
+and gives the header a taller, "bigger" appearance with padding. */
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Increased vertical padding (1.25rem) makes the bar look bigger/taller */
+    padding: 1.25rem var(--space-lg); 
+    
+    /* Key for arranging items horizontally: */
+    display: flex; 
+    
+    /* Pushes the logo (left) and the navigation links (right) to opposite sides: */
+    /* justify-content: space-between;  */
+    
+    /* Vertically centers the logo and links with respect to each other: */
+    align-items: center;
+}
+
+
+/* Base styles for the navigation toggle button (hidden on desktop) */
+.nav-toggle {
+    display: none; /* Hide toggle button by default */
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--clr-text-main);
+    /* CRITICAL FIX: Ensure it's on top of the header (z-index: 1000) */
+    z-index: 1002; 
+    
+    /* Give it a clear clickable area */
+    padding: 10px;
+
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; 
+    align-items: center;
+    
+    /* CRITICAL FIX: Pushes the nav-links element as far right as possible (from the logo)
+       and then centers the remaining space around the links */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media (max-width: 768px) {
+    /* Step 1a: Hide the navigation links */
+    .nav-links {
+        display: none !important; /* Hides the full navigation list */
+        position: absolute;
+        top: 100%; /* Positions the menu right under the header */
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--clr-background);
+        align-items: flex-end;
+        z-index: 998; /* Below the header (z-index: 1000) */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Step 1b: Show the hamburger icon */
+    .nav-toggle {
+        display: block; /* Show toggle button on mobile */
+    }
+
+    /* Step 1c: Ensure the active menu links stack */
+    .nav-links a {
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--clr-divider);
+        text-align: center;
+        background-color: rgba(var(--clr-surface-rgb), 0.8);
+        width: 100%;
+    }
+    
+    /* Step 1d: JS will add this class to show the menu */
+    .nav-links.active {
+        display: flex !important; /* Overrides 'display: none' when menu is opened */
+    }
+    
+    /* Step 1e: Ensure the header aligns logo and toggle */
+    .nav-container {
+        justify-content: space-between;
+        padding: 10px var(--space-md);
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-nav {
+        /* Forces links to stack vertically */
+        display: flex;
+        flex-direction: column; 
+        align-items: center; /* Centers stacked links */
+    }
+    
+    /* Hide the separators when stacking vertically */
+    .footer-nav .separator {
+        display: none; 
+    }
+    
+    /* Add space between the stacked links */
+    .footer-nav a {
+        padding: 5px 0;
+    }
+}
+
+
+
+
+
+
+
+
+/* --- LOGO STYLING (Q-H. DO) --- */
+/* Sizes image logo to 40px height, ensuring it fits neatly in the header. */
+.logo-image {
+    /* Adjust these values to control the size of logo */
+    height: 40px; 
+    width: auto; /* Maintains aspect ratio */
+}
+
+/* --- NAVIGATION LINKS STYLING (Home, Education, etc.) --- */
+.nav-links {
+    /* Ensures the individual links are horizontal: */
+    display: flex; 
+    gap: 20px; /* Space between the links */
+    /* Ensure the links are vertically centered with the logo */
+    align-items: center;
+}
+
+
+/* Makes the link text bolder (font-weight: 600;) and sets up the animation space for the underline. */
+.nav-links .nav-item {
+    color: var(--clr-text-light);
+    font-weight: 600; /* Makes the link text bolder */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 5px 0; 
+    position: relative; /* Needed for the hover effect */
+    transition: color 0.2s;
+}
+
+/* Creates the clean, animating gold underline hover effect. */
+.nav-links .nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--clr-accent);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links .nav-item:hover::after {
+    width: 100%; /* Line expands on hover */
+}
+
+
+
+/* --- Profile/Hero Section --- */
+/* Arranges the image and text side-by-side and styles the profile picture with a round shape and a gold border. */
+.profile-container {
+    display: flex;
+    align-items: center; /* Vertically centers the text beside the image */
+    gap: var(--space-xl);
+    padding: var(--space-lg) 0;
+}
+
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Makes the image perfectly round */
+    object-fit: cover;
+    border: 4px solid var(--clr-accent); /* Gold border for emphasis */
+    box-shadow: var(--shadow-light);
+}
+
+
+/* Simple styling for the name/tagline */
+.gradient-name {
+    font-size: 3rem;
+    margin-top: var(--space-sm);
+    color: var(--clr-text-light);
+}
+
+
+.about-me-tagline {
+    font-size: 1.5rem;
+    color: var(--clr-text-light);
+}
+
+.profile-info h1 {
+    font-size: 3rem;
+    margin-bottom: var(--space-sm);
+    color: var(--clr-text-light);
+}
+
+.profile-info p {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-lg);
+    color: var(--clr-text-secondary);
+}
+
+/* Highlight the key text (e.g., job title) using the gold accent color */
+.highlight-text {
+    color: var(--clr-accent); 
+    font-weight: 600;
+}
+
+#contact {
+    border-bottom: 0; 
+    /* remove border line for the last section */
+}
+
+.contact-prompt {
+    font-size: 1.25rem;
+    color: var(--clr-text-main, #333);
+    max-width: 600px; /* Limits the line length for readability */
+    margin: var(--space-lg) auto; /* Centers the paragraph block */
+}
+
+.contact-links-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows links to wrap onto the next line on smaller screens */
+    justify-content: center; /* Centers the link items horizontally */
+    gap: 40px; /* Consistent space between all links */
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-lg);
+}
+
+
+.contact-link {
+    /* 1. Alignment: Make the link vertically stacked and centered */
+    display: flex;
+    flex-direction: column; /* CRITICAL: Stacks the icon and text vertically */
+    align-items: center;    /* Centers the icon and text horizontally */
+    
+    /* 2. Aesthetics: Remove button styling */
+    text-decoration: none;
+    background-color: transparent; /* Remove background color */
+    border: none;              /* Remove border */
+    padding: 0;                /* Remove padding */
+    
+    /* 3. Text Style: Style the text label below the icon */
+    color: var(--clr-text-main); /* Set text color (e.g., black or white depending on your background) */
+    font-weight: 500;
+    font-size: 1rem;
+    
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    /* Set the text label color */
+    color: var(--clr-accent); 
+    
+    /* Ensure any transformation or shadow is removed/reset */
+    transform: none; 
+    box-shadow: none;
+}
+
+.contact-link i {
+    font-size: 3rem; /* Make the icon much larger */
+    margin-right: 0;   /* Remove horizontal margin */
+    margin-bottom: 8px; /* Add vertical space below the icon */
+    color: var(--clr-text-main); /* Ensure the icon color matches the text or is set to white/black */
+}
+
+
+/*==================== 5. LISTS, DETAILS, AND PUBLICATIONS ====================*/
+
+.experience-date, .education-date, .project-date {
+    font-size: 0.9rem;
+    color: var(--clr-text-secondary);
+    
+    /* Set text alignment to center */
+    text-align: center;
+    
+    /* Ensure there's space before the bullet points */
+    margin-bottom: var(--space-md); 
+}
+
+
+.education-brand,.experience-brand {
+    /* Increase font size for emphasis */
+    font-size: 1.5rem; 
+
+    /* Reduce the line height to close the vertical gap */
+    line-height: 1.2; 
+    
+    /* Ensure the title uses full width and is centered, as established previously */
+    max-width: 100%; 
+    text-align: left; 
+    margin: var(--space-sm) 0; /* Add margin for spacing above and below */
+    
+    font-weight: 700; /* Make it bold */
+}
+
+.project-brand {
+    /* Increase font size for emphasis */
+    font-size: 1.2rem; 
+
+    /* Reduce the line height to close the vertical gap */
+    line-height: 1.2; 
+    
+    /* Ensure the title uses full width and is centered, as established previously */
+    max-width: 100%; 
+    text-align: center; 
+    margin: var(--space-sm) 0; /* Add margin for spacing above and below */
+    
+    font-weight: 700; /* Make it bold */
+}
+
+/* --- B. COMBINED PUBLICATIONS LIST (The list below the projects) --- */
+
+#publications-list {
+    padding-top: var(--space-lg);
+}
+
+.publications-subtitle {
+    font-size: 2rem;
+    color: var(--clr-accent); /* Publications subtitle is accented in gold */
+    margin-bottom: var(--space-lg);
+    border-left: 5px solid var(--clr-primary);
+    padding-left: var(--space-md);
+}
+
+/* Remove default list styling and set up the custom counter */
+.pub-list {
+    list-style: none; 
+    counter-reset: pub-counter; /* Starts the publication numbering at 1 */
+    padding: 0;
+}
+
+.pub-item {
+    background-color: var(--clr-surface);
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    border-radius: 5px;
+    border-left: 3px solid var(--clr-text-secondary);
+    position: relative;
+    padding-left: var(--space-xl);
+}
+
+/* Custom Numbering for Publications */
+.pub-item::before {
+    counter-increment: pub-counter; /* Increments the number for each item */
+    content: counter(pub-counter) ".";
+    position: absolute;
+    left: var(--space-md);
+    top: var(--space-md);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.pub-title {
+    font-weight: 600;
+    color: var(--clr-text-light);
+    margin-bottom: var(--space-sm);
+}
+
+
+/* Highlighting name (Q. -H.Do) */
+.highlight-self {
+    color: var(--clr-accent); 
+    font-weight: bold;
+    font-style: normal;
+}
+
+.pub-document-link {
+    font-size: 1rem;
+    margin-right: var(--space-md);
+}
+
+
+/*==================== 7. HOME BANNER STYLING ====================*/
+
+.hero-banner {
+    /* Set the height to ensure the banner image is visible */
+    min-height: 500px; /* Adjust this value to make the banner taller or shorter */
+    
+    /* 1. Set the background image */
+    background-image: url('KHU_banner8.jpg'); 
+    
+    /* 2. Control image size and positioning */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image from tiling */
+
+    /* 3. Add a dark overlay for contrast (optional, but highly recommended) */
+    position: relative;
+    /* Use the gradient to make text over the image more readable */
+    background-blend-mode: multiply; /* Blends the image with the background-color */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay color */
+
+    display: flex; /* Ensures content is centered vertically */
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    /* Use a fixed max-width for readability, but still centered */
+    max-width: 1000px; 
+    width: 100%; /* Important for centering */
+    padding: var(--space-xl) var(--space-lg); 
+
+    /* THIS CENTERS THE INNER ITEMS: */
+    display: flex;
+    flex-direction: column; /* Stacks image, h1, and p */
+    align-items: center; /* Centers the stacked items (image, h1, p) */
+    
+    /* Ensures all text inside h1 and p is centered */
+    text-align: center;
+    
+    gap: var(--space-md);
+}
+
+/* --- New Styles for Publication List Page --- */
+
+.pub-header {
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--clr-divider);
+    margin-bottom: var(--space-lg);
+}
+
+.home-button {
+    text-decoration: none;
+    color: var(--clr-primary);
+    font-weight: 600;
+    padding: 8px 15px;
+    border: 1px solid var(--clr-primary);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: var(--clr-primary);
+    color: var(--clr-background); /* Invert colors on hover */
+}
+
+.update-date {
+    font-style: italic;
+    color: var(--clr-text-light);
+    margin-top: -10px; /* Pull it closer to the title */
+    margin-bottom: var(--space-xl);
+}
+
+.pub-list-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--clr-text-light);
+    color: var(--clr-background);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-top: var(--space-md);
+    transition: opacity 0.3s;
+}
+
+.pub-list-link:hover {
+    background-color: var(--clr-accent);
+    color: var(--clr-background); /* Invert colors on hover */
+}
+
+.publication-link-container {
+    /* Add padding/margin to separate it from surrounding content */
+    font-size: 1.25rem;
+    padding: var(--space-lg) 0 ;
+    text-align: left;
+}
+
+
+/* --- Footer Container Styling --- */
+footer {
+    width: 100%;
+    background-color: var(--clr-dark-footer, #1f1f1f); /* Dark charcoal background */
+    color: var(--clr-light, #cccccc); /* Light grey text color */
+    padding: var(--space-md) var(--space-md); /* Padding above and below the content */
+    text-align: center; /* Center everything inside */
+}
+
+/* --- Logo/Monogram Styling --- */
+.footer-logo {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: var(--space-md);
+    filter: invert(1); /* Optional: If your logo is dark, this makes it white */
+}
+
+/* --- Footer Navigation Styling --- */
+.footer-nav {
+    margin-bottom: var(--space-md);
+}
+
+.footer-nav a {
+    color: var(--clr-light); /* Ensure links are visible */
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0 var(--space-md); /* Spacing around the link text */
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--clr-accent); /* Highlight on hover */
+}
+
+/* Separator between links */
+.footer-nav .separator {
+    color: var(--clr-light-separator, #777); 
+}
+
+/* --- Copyright and Credits Styling --- */
+.footer-copyright {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--clr-light-separator);
+}
+
+
+/* Progress Container: Fixed at the top */
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px; /* Define the height of the bar */
+    background-color: transparent; /* Optional: Set a background for the track */
+    z-index: 1001; /* Ensure it stays on top of all other content */
+}
+
+/* Progress Bar: The element that fills up */
+#progress-bar {
+    height: 100%;
+    width: 0%; /* Starts at 0% */
+    background-color: var(--clr-accent); /* Use your accent color */
+    transition: width 0.1s ease-out; /* Smooth transition for filling */
+}
+
+
+
+
+
+/* Media Query for large screens (Laptops/Desktops) */
+@media (min-width: 992px) {
+    #skills-container.skills-grid {
+        /* Force exactly two equal-width columns (50% each) */
+        grid-template-columns: 1fr 1fr;
+    }
+}

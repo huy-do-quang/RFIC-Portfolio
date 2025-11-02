@@ -1,0 +1,644 @@
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+            <!--========== REMIXICON ==========-->
+            <link
+                href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+                rel="stylesheet"
+            />
+            <!--========== AWESOME CDN ==========-->
+            <link 
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+                rel="stylesheet"
+            />
+            <!--========== SWIPER CSS ==========-->
+            <!--========== CSS ==========-->
+            <link rel="stylesheet" href="DQH_mymaterial/css/style.css">
+            <title> Welcome to My Portfolio</title>
+            <link rel="icon" type="image/png" href="DQH_mymaterial/img/HD_logo2.png">
+        </head>
+        <body>
+            <div id="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <header>
+            <div class="nav-container">
+                
+                <a href="#home" class="logo-link">
+                    <img src="DQH_mymaterial/img/HD_logo.png" alt="Q-H. DO Personal Logo" class="logo-image">
+                </a>
+
+                <nav class="nav-links" id="nav-menu">
+                    <a href="#home" class="nav-item">Home</a>
+                    <a href="#education" class="nav-item">Education</a>
+                    <a href="#experience" class="nav-item">Experience</a>
+                    <a href="#projects" class="nav-item">Projects/Publications</a>
+                    <a href="#skills" class="nav-item">Skills</a>
+                    <a href="#contact" class="nav-item">Contact</a>
+                </nav>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+            </div>
+            </header>
+
+            <!--========== HOME SECTION ==========-->
+            <section id="home" class="hero-banner">
+                <div class="hero-content">
+                    <img src="DQH_mymaterial/img/test_profile.jpg" alt="HuyDo Headshot" class="profile-image">
+                    
+                    <h1 class="gradient-name">Do Quang Huy, Ph.D</h1>
+                    
+                    <p class="about-me-tagline">
+                        I enjoy problem-solving by combining my hardware and software skills.
+                        <br>
+                        Explore my portfolio!
+                    </p>
+                </div>
+            </section>
+
+            <main id="main-content">
+                
+                <!--========== EDUCATION SECTION ==========-->
+                <section id="education" class="education-section">
+                    
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div id="education-container" class="cards-grid">
+
+                        <div class="education-card">
+
+                            <div class="education-header-flex"> 
+                                <h3 class="education-brand">Ph.D. in Electronic Engineering</h3>
+                                <img src="DQH_mymaterial/img/KHU_logo8.png" alt="KHU logo" class="KHU-logo">
+                            </div>
+                            
+                            <div class="education-info">
+                                <p class="education-university">
+                                    Kyunghee University, South Korea
+                                    <br>
+                                    Intellegent Wireless Power Research Center (IWPRC)
+                                </p>
+                                <p class="education-date">
+                                    <em>Spring 2021 - Spring 2026</em>
+                                </p>
+
+                            </div>
+
+                            <a href="education-details.html" class="card-btn-link">
+                                <button class="card-btn">Learn More</button>
+                            </a>
+                        </div>
+
+                        <div class="education-card">
+
+                            <div class="education-header-flex"> 
+                                <h3 class="education-brand">B.E. in Mechatronics Engineering</h3>
+                                <img src="DQH_mymaterial/img/hust_logo.png" alt="HUST logo" class="HUST-logo">
+                            </div>
+                            
+                            <div class="education-info">
+                                <p class="education-university">
+                                    Hanoi University of Science and Technology, Vietnam
+                                    <br>
+                                    Center of Training for Exellence Students (CTES)
+                                </p>
+                                <p class="education-date">
+                                    <em>Fall 2015 - Fall 2020</em>
+                                </p>
+
+                            </div>
+
+                            <a href="education-details.html" class="card-btn-link">
+                                <button class="card-btn">Learn More</button>
+                            </a>
+
+                        </div>
+                                        
+
+                    
+                    </div>
+                </section>
+
+                <!--========== EXPERIENCE SECTION ==========-->
+
+                <section id="experience" class="experience-section">
+                    
+                    <div class="section-header-flex">
+            
+                        <h2 class="section-title">Experience</h2>
+                        
+                        <div class="scroll-controls">
+                            <button class="scroll-arrow left-arrow" onclick="scrollCards(-1, 'experience-container')">&#9664;</button> 
+                            <button class="scroll-arrow right-arrow" onclick="scrollCards(1, 'experience-container')">&#9654;</button>
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="experience-container" class="cards-grid">
+
+                        <!--========== Graduate Researcher (Full Time) ==========-->
+                        <div class="experience-card">
+
+                            <div class="experience-header-flex"> 
+                                <h3 class="experience-brand">Graduate Reseacher<br>(Full Time)</h3>
+                                <img src="DQH_mymaterial/img/KHU_logo8.png" alt="KHU logo" class="KHU-ex-logo">
+                            </div>
+
+
+                            <div class="experience-info">
+                                <p class="experience-company">
+                                    IWPRC, South Korea
+                                </p>
+                                <p class="experience-date">
+                                    <em>2021.03 – present</em>
+                                </p>    
+                                <ul class="experience-description">
+                                    <li>RF/Analog IC Design Toward Intellegent Wireless Power Transfer.</li>
+                                    <li>Mentor Graduate Students.</li>
+                                </ul>
+                            </div>
+                            <a href="experience-details.html" class="card-btn-link">
+                                <button class="card-btn">Learn More</button>
+                            </a>
+                        </div>
+
+                        <!--========== Hardware Engineer (Full Time) ==========-->
+                        <div class="experience-card">
+                            <div class="experience-header-flex"> 
+                                <h3 class="experience-brand">Hardware Engineer<br>(Full Time)</h3>
+                                <img src="DQH_mymaterial/img/vietmani_logo2.png" alt="VMN logo" class="VMN-ex-logo">
+                            </div>
+
+
+                            <div class="experience-info">
+                                <p class="experience-company">
+                                    Vietmani JSC, Vietnam
+                                </p>
+                                <p class="experience-date">
+                                    <em>2019.09 – 2021.02</em>
+                                </p>
+                                <ul class="experience-description">
+                                    <li>Automation Systems Design.</li>
+                                    <li>Mechanical Design and Sensor Integration.</li>
+                                </ul>
+                            </div>
+                            <a href="experience-details.html" class="card-btn-link">
+                                <button class="card-btn">Learn More</button>
+                            </a>
+                        </div>
+
+                        <!--========== PLC Engineer (Intern) ==========-->
+                        <div class="experience-card">
+                            <div class="experience-header-flex"> 
+                                <h3 class="experience-brand">Hardware Engineer<br>(Intern)</h3>
+                                <img src="DQH_mymaterial/img/bkapema_logo2.png" alt="BKAPEMA logo" class="BKAPEMA-ex-logo">
+                            </div>
+
+
+                            <div class="experience-info">
+                                <p class="experience-company">
+                                    BKAPEMA Co. Ltd., Vietnam
+                                </p>
+                                <p class="experience-date">
+                                    <em>2018.04 – 2019.08</em>
+                                </p>
+                                <ul class="experience-description">
+                                    <li>Automation Systems Design.</li>
+                                    <li>PLC/HMI Programming.</li>
+                                    <li>Electrical Design and Sensor Integration.</li>
+                                </ul>
+                            </div>
+                            <a href="experience-details.html" class="card-btn-link">
+                                <button class="card-btn">Learn More</button>
+                            </a>
+                        </div>
+
+                        <!--========== Hardware Engineer (Intern) ==========-->
+                        <div class="experience-card">
+                            <div class="experience-header-flex"> 
+                                <h3 class="experience-brand">Hardware Engineer<br>(Intern)</h3>
+                                <img src="DQH_mymaterial/img/selex_logo3.png" alt="SELEX logo" class="SELEX-ex-logo">
+                            </div>
+
+
+                            <div class="experience-info">
+                                <p class="experience-company">
+                                    Selex Motors JSC, Vietnam
+                                </p>
+                                <p class="experience-date">
+                                    <em>2017.06 – 2018.12</em>
+                                </p>
+                                <ul class="experience-description">
+                                    <li>Analog/Digital Circuit Design.</li>
+                                    <li>Embedded Systems Programming.</li>
+                                    <li>PCB Design and Testing.</li>
+
+                                </ul>
+                            </div>
+                            <a href="experience-details.html" class="card-btn-link">
+                                <button class="card-btn">Learn More</button>
+                            </a>
+                        </div>
+                    
+                    </div>
+                </section>
+
+
+                <!--========== PROJECTS/PUBLICATIONS SECTION ==========-->
+                <section id="projects" class="projects-section">
+                    
+                    <div class="section-header-flex">
+            
+                        <h2 class="section-title">Projects & Publications</h2>
+
+                        <div class="scroll-controls">
+                            <button class="scroll-arrow left-arrow" onclick="scrollCards(-1, 'projects-container')">&#9664;</button> 
+                            <button class="scroll-arrow right-arrow" onclick="scrollCards(1, 'projects-container')">&#9654;</button>
+                        </div>
+                                        
+                    </div>
+                    
+                    <div id="projects-container" class="cards-grid">
+                        
+                        <!--========== 1. Portfolio Website ==========-->
+                        <div class="project-card">
+
+                            <div class="project-header-flex"> 
+                                <h3 class="project-brand">Porfolio Website</h3>
+                                <img src="DQH_mymaterial/img/project1_logo2.png" alt="project1 logo" class="project1-logo">
+                            </div>
+                            
+                            <div class="project-info">
+                                <p class="project-date">
+                                    <em>2025.09 - 2025.11</em>
+                                </p>
+                                
+                                <div class="project-tags">
+                                    <span class="skill-tag">HTML</span>
+                                    <span class="skill-tag">CSS</span>
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">UI/UX</span>
+                                    <span class="skill-tag">Version Control</span>
+                                </div>
+                            </div>
+
+                            <a href="project-details.html" class="card-btn-link">
+                                <button class="card-btn">Project Details</button>
+                            </a>
+
+                        </div>
+
+                        <!--========== 2. IR Receiver ==========-->           
+                        <div class="project-card">
+                            
+                            <div class="project-header-flex"> 
+                                <h3 class="project-brand">IR Receiver Based on Staggered Communication</h3>
+                                <img src="DQH_mymaterial/img/project2_logo.jpg" alt="project2 logo" class="project2-logo">
+                            </div>
+
+                            <div class="project-info">
+                                <p class="project-date">
+                                    <em>2025.05 - present</em>
+                                </p>
+                                
+                                <div class="project-tags">
+                                    <span class="skill-tag">RF/Analog Design</span>
+                                    <span class="skill-tag">IC Layout</span>
+                                    <span class="skill-tag">Design Verification</span>
+                                </div>
+
+                            </div>
+
+                            <a href="project-details.html" class="card-btn-link">
+                                <button class="card-btn">Project Details</button>
+                            </a>
+
+
+                        </div>
+
+                        <!--========== 3. Phase Conjugator and Circulator IC for RWPT System ==========-->
+                        <div class="project-card">
+                            
+                            <div class="project-header-flex"> 
+                                <h3 class="project-brand">Phase Conjugator and Circulator IC for RWPT System</h3>
+                                <img src="DQH_mymaterial/img/project3_logo.jpg" alt="project3 logo" class="project3-logo">
+                            </div>
+
+                            <div class="project-info">
+                                <p class="project-date">
+                                    <em>2023.03 - 2025.03</em>
+                                </p>
+                                
+                                <div class="project-tags">
+                                    <span class="skill-tag">RF/Analog Design</span>
+                                    <span class="skill-tag">IC Layout</span>
+                                    <span class="skill-tag">PCB</span>
+                                    <span class="skill-tag">EM Sim</span>
+                                    <span class="skill-tag">Design Verification</span>
+                                    <span class="skill-tag">Lab</span>
+                                </div>
+
+
+
+                            </div>
+
+                            <a href="project-details.html" class="card-btn-link">
+                                <button class="card-btn">Project Details</button>
+                            </a>
+
+                        </div>
+
+                        <!--========== 4. Retrodirective RF SoC with Magnetless Circulator ==========-->
+                        <div class="project-card">
+                            
+                            <div class="project-header-flex"> 
+                                <h3 class="project-brand">Retrodirective RF SoC with Magnetless Circulator</h3>
+                                <img src="DQH_mymaterial/img/project4_logo.png" alt="project4 logo" class="project4-logo">
+                            </div>
+
+
+                            <div class="project-info">
+                                <p class="project-date">
+                                    <em>2022.01 - 2023.01</em>
+                                </p>
+                                <div class="project-tags">
+                                    <span class="skill-tag">RF/Analog Design</span>
+                                    <span class="skill-tag">IC Layout</span>
+                                    <span class="skill-tag">PCB</span>
+                                    <span class="skill-tag">EM Sim</span>
+                                    <span class="skill-tag">Design Verification</span>
+                                    <span class="skill-tag">Lab</span>
+                                </div>
+
+                            </div>
+
+                            <a href="project-details.html" class="card-btn-link">
+                                <button class="card-btn">Project Details</button>
+                            </a>
+
+                        </div>
+
+                        <!--========== 5. RFIC Design for Retro-directive Beamforming ==========-->
+                        <div class="project-card">
+                            
+                            <div class="project-header-flex"> 
+                                <h3 class="project-brand">RFIC Design for Retro-directive Beamforming</h3>
+                                <img src="DQH_mymaterial/img/project5_logo.jpg" alt="project5 logo" class="project5-logo">
+                            </div>
+
+                            <div class="project-info">
+                                <p class="project-date">
+                                    <em>2021.04 - 2021.12</em>
+                                </p>
+
+                                <div class="project-tags">
+                                    <span class="skill-tag">RF/Analog Design</span>
+                                    <span class="skill-tag">IC Layout</span>
+                                    <span class="skill-tag">PCB</span>
+                                    <span class="skill-tag">Design Verification</span>
+                                    <span class="skill-tag">Lab</span>
+                                </div>
+
+                            </div>
+
+                            <a href="project-details.html" class="card-btn-link">
+                                <button class="card-btn">Project Details</button>
+                            </a>
+
+                        </div>
+
+                        <!--========== 6. Automatic Balancing System for a Lift-Assist Manipulator ==========-->
+                        <div class="project-card">
+                            
+                            <div class="project-header-flex"> 
+                                <h3 class="project-brand">Automatic Balancing System for a Lift-Assist Manipulator</h3>
+                                <img src="DQH_mymaterial/img/project_update.png" alt="project6 logo" class="project6-logo">
+                            </div>
+
+                            <div class="project-info">
+
+                                <p class="project-date">
+                                    <em>2019.09 – 2021.02</em>
+                                </p>
+
+                                <div class="project-tags">
+                                    <span class="skill-tag">3D Design</span>
+                                    <span class="skill-tag">Embedded Programming</span>
+                                    <span class="skill-tag">Sensor Integration</span>
+                                    <span class="skill-tag">FEA Simulation</span>
+                                </div>
+
+                            </div>
+
+                            <a href="project-details.html" class="card-btn-link">
+                                <button class="card-btn">Project Details</button>
+                            </a>
+
+                        </div>
+
+                        <!--========== 7. Electrical System for Electric Vehicles ==========-->
+                        <div class="project-card">
+                            
+                            <div class="project-header-flex"> 
+                                <h3 class="project-brand">Battery Management System (BMS) for Electric Vehicles</h3>
+                                <img src="DQH_mymaterial/img/project_update.png" alt="project7 logo" class="project7-logo">
+                            </div>
+
+                            <div class="project-info">
+
+                                <p class="project-date">
+                                    <em>2018.04 – 2019.08</em>
+                                </p>
+
+                                <div class="project-tags">
+                                    <span class="skill-tag">Circuit Design</span>
+                                    <span class="skill-tag">System Debugging</span>
+                                    <span class="skill-tag">PCB</span>
+                                    <span class="skill-tag">Embedded Programming</span>                            
+                                </div>
+
+                            </div>
+
+                            <a href="project-details.html" class="card-btn-link">
+                                <button class="card-btn">Project Details</button>
+                            </a>
+
+                        </div>
+
+
+                        <!--========== 8. Automation Machine Programming ==========-->
+                        <div class="project-card">
+                            
+                            <div class="project-header-flex"> 
+                                <h3 class="project-brand">Automation Machines Programming</h3>
+                                <img src="DQH_mymaterial/img/project_update.png" alt="project8 logo" class="project8-logo">
+                            </div>
+
+                            <div class="project-info">
+                                <p class="project-date">
+                                    <em>2017.06 – 2018.12</em>
+                                </p>
+
+                                <div class="project-tags">
+                                    <span class="skill-tag">PLC/HMI Programming</span>
+                                    <span class="skill-tag">Sensor and Actuator Integration</span>
+                                </div>
+
+                            </div>
+
+                            <a href="project-details.html" class="card-btn-link">
+                                <button class="card-btn">Project Details</button>
+                            </a>
+
+                        </div>     
+                    
+
+                    </div>
+
+
+                    <div class="publication-link-container">
+                        <!-- <p>A complete list of my publications can be found here:</p> -->
+                        
+                        <a href="publication_list.html" class="pub-list-link">
+                            <i class="fa-solid fa-file-lines"></i> View Publication List
+                        </a>
+                    </div>
+                    
+                    </div>
+                </section>
+
+                <!--========== SKILLS SECTION ==========-->
+                <section id="skills" class="skills-section">
+            
+                    <h2 class="section-title">Skills</h2>
+                    
+                    <div id="skills-container" class="skills-grid">
+                        
+                        <div class="skill-group">
+                            <h3>Technical Skills</h3>
+                            <div class="skill-list">
+                                <span class="skill-tag">RF/Analog Design</span>
+                                <span class="skill-tag">IC Layout</span>
+                                <span class="skill-tag">Scientific Writing</span>
+                                <span class="skill-tag">PCB Design</span>
+                                <span class="skill-tag">EM Simulation</span>
+                                <span class="skill-tag">Embedded Programming</span>
+                                
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                            <h3>CAD Tools</h3>
+                            <div class="skill-list">
+                                <span class="skill-tag">Cadence</span>
+                                <span class="skill-tag">ADS</span>
+                                <span class="skill-tag">SpectreRF</span>
+                                <span class="skill-tag">Calibre</span>
+                                <span class="skill-tag">HFSS</span>
+                                
+                                <span class="skill-tag">SiWave</span>
+                                <span class="skill-tag">Altium</span>
+                                <span class="skill-tag">MATLAB</span>
+                                <span class="skill-tag">AutoCAD</span>
+                                <span class="skill-tag">Origin</span>
+                                
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                            <h3>Programming Languages</h3>
+                            <div class="skill-list">
+                                <span class="skill-tag">C/C++/C#</span>
+                                <span class="skill-tag">Python</span>
+                                
+                            </div>
+                        </div>
+
+                        <div class="skill-group">
+                        <h3>Lab Equipments</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Network Analyzer</span>
+                            <span class="skill-tag">Spectrum Analyzer</span>
+                            <span class="skill-tag">Oscilloscope</span>
+                            <span class="skill-tag">Signal Generator</span>
+                            
+                            <span class="skill-tag">Probe Station</span>
+                            <span class="skill-tag">Laser Trimming</span>
+                        </div>
+                </div>
+                        
+                </section>
+
+                <!--========== CONTACT ==========-->
+                <section id="contact" class="contact-section">
+                    
+                    <h2 class="section-title">Get in Touch</h2>
+                    <p class="contact-prompt">
+                        I am actively looking for RF/Analog IC Design opportunities 
+                        <br>and I would love to connect.
+                    </p>
+                    
+                    <div class="contact-links-container">
+                        <a href="mailto:huydq_ee@khu.ac.kr" class="contact-link" target="_blank">
+                            <i class="fa-solid fa-envelope"></i> Email
+                        </a>
+                        <a href="https://www.linkedin.com/in/huy-do-5381131b5/" class="contact-link" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/huy-do-quang" class="contact-link" target="_blank">
+                            <i class="fa-brands fa-square-github"></i> GitHub
+                        </a>
+                        <a href="https://orcid.org/0009-0009-1159-1639" class="contact-link" target="_blank">
+                            <i class="fa-brands fa-orcid"></i> ORCID
+                        </a>
+                        <a href="https://drive.google.com/file/d/1K-f24CnaiXOOutPP6FCwE_-WpYbIeWsa/view?usp=sharing" class="contact-link" target="_blank">
+                            <i class="fa-regular fa-file"></i> CV Download
+                        </a>
+                    </div>
+                </section>
+
+            </main>
+
+            <footer>
+                <div class="footer-content">
+                    
+                    <a href="#home" class="footer-logo-link">
+                        <img src="DQH_mymaterial/img/HD_logo2.png" alt="footer logo" class="footer-logo">
+                    </a>
+
+                    <nav class="footer-nav">
+                        <a href="#home">Home</a>
+                        <span class="separator">|</span>
+
+                        <a href="#education">Education</a>
+                        <span class="separator">|</span>
+
+                        <a href="#experience">Experience</a>
+                        <span class="separator">|</span>
+
+                        <a href="#projects">Projects</a>
+                        <span class="separator">|</span>
+
+                        <a href="#skills">Skills</a>
+                        <span class="separator">|</span>
+
+                        <a href="#contact">Contact</a>
+                    </nav>
+
+                    <p class="footer-copyright">
+                        © 2025 Q. -H.Do
+                    </p>
+                </div>
+            </footer>
+
+            <script src="DQH_mymaterial/js/main.js"></script>
+
+        </body>
+    </html>
