@@ -602,7 +602,7 @@ and gives the header a taller, "bigger" appearance with padding. */
 
 .contact-prompt {
     font-size: 1.25rem;
-    color: var(--clr-text-main, #333);
+    color: var(--clr-light);
     max-width: 600px; /* Limits the line length for readability */
     margin: var(--space-lg) auto; /* Centers the paragraph block */
 }
