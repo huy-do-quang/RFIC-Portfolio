@@ -17,7 +17,7 @@
     --clr-text-light: #f0f0f0;      /* Main text color */
     --clr-text-secondary: #aaaaaa;  /* Gray for dates, details, and captions */
     --clr-divider: #333333;         /* Separator lines */
-    --clr-gray: #2b2b2b
+
 
     /* Spacing & Shadow */
     --space-sm: 0.5rem;
@@ -69,6 +69,30 @@ section {
     font-size: 2.5rem;
     color: var(--clr-primary); /* Use blue for a strong, clean title color */
     text-align: left;
+    margin-bottom: var(--space-md);
+    
+    /* Design element similar to the reference portfolio: */
+    border-bottom: 3px solid var(--clr-accent); /* Gold line under the title */
+    display: inline-block; /* Allows the border to only span the text width */
+    padding-bottom: var(--space-sm);
+    text-transform: uppercase;   
+}
+
+/* Use for additional html files */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 var(--space-md);
+    
+    /* ADD THIS LINE TO CENTER THE INLINE-BLOCK TITLE */
+    text-align: center; 
+}
+
+.project-title, .pulication-list-title {
+    font-size: 2rem;
+    color: var(--clr-background); 
+    text-align: center;
     margin-bottom: var(--space-md);
     
     /* Design element similar to the reference portfolio: */
@@ -744,6 +768,7 @@ and gives the header a taller, "bigger" appearance with padding. */
     font-weight: 600;
     color: var(--clr-text-light);
     margin-bottom: var(--space-sm);
+    text-align: left;
 }
 
 
@@ -752,6 +777,26 @@ and gives the header a taller, "bigger" appearance with padding. */
     color: var(--clr-accent); 
     font-weight: bold;
     font-style: normal;
+}
+
+.pub-links {
+    /* Ensures the container takes full available width */
+    width: 100%; 
+    
+    /* Set alignment for inline children (like the link) */
+    text-align: left; 
+    
+    /* Add some top margin to separate it from the publication title */
+    margin-top: 10px; 
+    
+    /* Ensure no unwanted wrapping or clearing if you add other elements */
+    clear: both; 
+}
+
+/* Optional: You may also want to ensure the link itself behaves as a block 
+   or inline-block if you apply specific dimensions to it later. */
+.pub-links .pub-document-link {
+    display: inline-block;
 }
 
 .pub-document-link {
@@ -830,6 +875,7 @@ and gives the header a taller, "bigger" appearance with padding. */
     color: var(--clr-text-light);
     margin-top: -10px; /* Pull it closer to the title */
     margin-bottom: var(--space-xl);
+    text-align: left;
 }
 
 .pub-list-link {
@@ -924,7 +970,14 @@ footer {
 }
 
 
-
+.light-detail-page {
+    /* Set the main page colors to light mode */
+    --clr-background: #ffffff;      /* White background */
+    --clr-text-light: #111111;      /* Black main text */
+    --clr-text-secondary: #555555;  /* Darker gray secondary text */
+    --clr-surface: #f8f8f8;         /* Light surface for any internal boxes */
+    --clr-divider: #dddddd;         /* Light divider lines */
+}
 
 
 /* Media Query for large screens (Laptops/Desktops) */
