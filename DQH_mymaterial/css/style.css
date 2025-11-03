@@ -340,14 +340,14 @@ section[id] {
 /* Style for the logo image */
 .KHU-side-logo {
     /* Set a reasonable height for visual balance. Adjust as needed. */
-    height: 90px; 
+    height: 80px; 
     width: auto;
     flex-shrink: 0; /* Prevents the logo from shrinking on small screens */
 }
 
 .HUST-side-logo {
     /* Set a reasonable height for visual balance. Adjust as needed. */
-    height: 60px; 
+    height: 65px; 
     width: auto;
     flex-shrink: 0; /* Prevents the logo from shrinking on small screens */
 }
