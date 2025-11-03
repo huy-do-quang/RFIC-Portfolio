@@ -970,15 +970,6 @@ footer {
 }
 
 
-.light-detail-page {
-    /* Set the main page colors to light mode */
-    --clr-background: #ffffff;      /* White background */
-    --clr-text-light: #111111;      /* Black main text */
-    --clr-text-secondary: #555555;  /* Darker gray secondary text */
-    --clr-surface: #f8f8f8;         /* Light surface for any internal boxes */
-    --clr-divider: #dddddd;         /* Light divider lines */
-}
-
 
 /* Media Query for large screens (Laptops/Desktops) */
 @media (min-width: 992px) {
