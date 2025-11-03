@@ -89,17 +89,16 @@ section {
     text-align: center; 
 }
 
-.project-title, .pulication-list-title {
+.side-title {
     font-size: 2rem;
-    color: var(--clr-primary);
+    color: var(--clr-text-light);
     text-align: center;
     margin-bottom: var(--space-md);
     
     /* Design element similar to the reference portfolio: */
-    border-bottom: 3px solid var(--clr-accent); /* Gold line under the title */
     display: inline-block; /* Allows the border to only span the text width */
     padding-bottom: var(--space-sm);
-    text-transform: uppercase;   
+ 
 }
 
 .education-section, .contact-section, .skills-section {
