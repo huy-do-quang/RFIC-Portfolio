@@ -91,7 +91,7 @@ section {
 
 .project-title, .pulication-list-title {
     font-size: 2rem;
-    color: var(--clr-background); 
+    color: var(--clr-primary);
     text-align: center;
     margin-bottom: var(--space-md);
     
