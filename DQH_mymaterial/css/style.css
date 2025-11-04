@@ -150,7 +150,7 @@ a:hover {
 The value should be small.
 */
 section[id] {
-    scroll-margin-top: 1rem; 
+    scroll-margin-top: 6rem; 
 }
 
 /* ==================== 3. CARD AND GRID LAYOUTS ==================== */
