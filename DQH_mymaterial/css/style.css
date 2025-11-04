@@ -950,7 +950,7 @@ and gives the header a taller, "bigger" appearance with padding. */
     transition: opacity 0.3s;
 }
 
-.pub-list-link:hover, .transcript-link-btn:hover {
+.pub-list-link:hover, .transcript-link-btn:hover, .github-link:hover {
     background-color: var(--clr-accent);
     color: var(--clr-background); /* Invert colors on hover */
 }
