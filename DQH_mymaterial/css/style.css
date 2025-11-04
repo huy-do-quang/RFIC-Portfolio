@@ -330,7 +330,7 @@ section[id] {
 }
 
 /* Container for the logo and the title */
-.education-header {
+.education-header, .experience-header {
     display: flex;        /* Enables flexible arrangement */
     align-items: center;  /* Vertically aligns the logo and title */
     gap: 15px;            /* Adds space between the logo and the title */
@@ -352,6 +352,14 @@ section[id] {
     flex-shrink: 0; /* Prevents the logo from shrinking on small screens */
 }
 
+.Vietmani-side-logo, .IWPRC-side-logo {
+    /* Set a reasonable height for visual balance. Adjust as needed. */
+    height: 100px; 
+    width: auto;
+    flex-shrink: 0; /* Prevents the logo from shrinking on small screens */
+}
+
+
 /* Ensure the title text is styled correctly */
 .degree-title {
     /* Reset any unwanted margins from the H2 */
@@ -362,9 +370,9 @@ section[id] {
 }
 
 /* Card styling for each university section */
-.education-block {
+.education-block, .experience-block {
     /* Use the light surface color (e.g., off-white/light gray) */
-    background-color: var(--clr-surface); 
+    background-color: #333333;
     
     /* Add inner space */
     padding: 30px; 
