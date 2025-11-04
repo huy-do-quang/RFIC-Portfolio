@@ -1034,6 +1034,9 @@ footer {
     color: var(--clr-text-dark); /* Ensure it contrasts with the card background */
 }
 
+
+
+
 /* Ensure the Goal row doesn't break poorly on small screens */
 @media (max-width: 600px) {
     .project-info-table {
