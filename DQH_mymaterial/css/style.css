@@ -333,26 +333,13 @@ section[id] {
 .education-header, .experience-header {
     display: flex;        /* Enables flexible arrangement */
     align-items: center;  /* Vertically aligns the logo and title */
+    justify-content: space-between; /* Pushes the left group and right logo to opposite edges */
     gap: 15px;            /* Adds space between the logo and the title */
     margin-bottom: 5px;   /* Space below the header before the details */
 }
 
 /* Style for the logo image */
-.KHU-side-logo {
-    /* Set a reasonable height for visual balance. Adjust as needed. */
-    height: 80px; 
-    width: auto;
-    flex-shrink: 0; /* Prevents the logo from shrinking on small screens */
-}
-
-.HUST-side-logo {
-    /* Set a reasonable height for visual balance. Adjust as needed. */
-    height: 65px; 
-    width: auto;
-    flex-shrink: 0; /* Prevents the logo from shrinking on small screens */
-}
-
-.Vietmani-side-logo, .IWPRC-side-logo {
+.KHU-side-logo, .HUST-side-logo, .Vietmani-side-logo, .IWPRC-side-logo, .selex-side-logo {
     /* Set a reasonable height for visual balance. Adjust as needed. */
     height: 100px; 
     width: auto;
@@ -366,12 +353,6 @@ section[id] {
     flex-shrink: 0; /* Prevents the logo from shrinking on small screens */
 }
 
-.selex-side-logo {
-    /* Set a reasonable height for visual balance. Adjust as needed. */
-    height: 100px; 
-    width: auto;
-    flex-shrink: 0; /* Prevents the logo from shrinking on small screens */
-}
 
 
 /* Ensure the title text is styled correctly */
@@ -957,7 +938,7 @@ and gives the header a taller, "bigger" appearance with padding. */
     text-align: left;
 }
 
-.pub-list-link, .transcript-link-btn {
+.pub-list-link, .transcript-link-btn, .github-link {
     display: inline-block;
     padding: 10px 20px;
     background-color: var(--clr-text-light);
@@ -980,7 +961,12 @@ and gives the header a taller, "bigger" appearance with padding. */
     padding: var(--space-lg) 0 ;
     text-align: left;
 }
-
+.github-link-container {
+    /* Add padding/margin to separate it from surrounding content */
+    font-size: 1rem;
+    padding: var(--space-sm) 0 ;
+    text-align: left;
+}
 
 /* --- Footer Container Styling --- */
 footer {
