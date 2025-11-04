@@ -1008,6 +1008,47 @@ footer {
 }
 
 
+/* Container: Defines the grid for the two columns */
+.project-info-table {
+    display: grid;
+    /* Sets the first column (Label) to 30% width and the second (Value) to the rest */
+    grid-template-columns: 15% 85%; 
+    gap: 5px 0; /* Vertical spacing between rows */
+    margin-top: 15px;
+}
+
+/* Row Styling */
+.table-row {
+    display: contents; /* Allows children to participate directly in the parent grid */
+}
+
+/* Label Column (Bold text) */
+.table-label {
+    /* font-weight: bold; */
+    color: var(--clr-accent); /* Optional: Highlight the labels */
+    padding-right: 15px; /* Space between the label and the value */
+}
+
+/* Value Column (Normal text) */
+.table-value {
+    color: var(--clr-text-dark); /* Ensure it contrasts with the card background */
+}
+
+/* Ensure the Goal row doesn't break poorly on small screens */
+@media (max-width: 600px) {
+    .project-info-table {
+        /* Stack vertically on very small screens for better readability */
+        grid-template-columns: 1fr; 
+    }
+    .table-label {
+        padding-right: 0;
+        margin-bottom: 3px;
+    }
+}
+
+
+
+
 @media (max-width: 768px) {
     /* Step 1a: Hide the navigation links */
     .nav-links {
