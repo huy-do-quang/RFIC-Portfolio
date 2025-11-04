@@ -359,6 +359,20 @@ section[id] {
     flex-shrink: 0; /* Prevents the logo from shrinking on small screens */
 }
 
+.BKAPEMA-side-logo {
+    /* Set a reasonable height for visual balance. Adjust as needed. */
+    height: 60px; 
+    width: auto;
+    flex-shrink: 0; /* Prevents the logo from shrinking on small screens */
+}
+
+.selex-side-logo {
+    /* Set a reasonable height for visual balance. Adjust as needed. */
+    height: 100px; 
+    width: auto;
+    flex-shrink: 0; /* Prevents the logo from shrinking on small screens */
+}
+
 
 /* Ensure the title text is styled correctly */
 .degree-title {
