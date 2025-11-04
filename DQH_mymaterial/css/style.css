@@ -514,67 +514,6 @@ and gives the header a taller, "bigger" appearance with padding. */
 }
 
 
-@media (max-width: 768px) {
-    /* Step 1a: Hide the navigation links */
-    .nav-links {
-        display: none !important; /* Hides the full navigation list */
-        position: absolute;
-        top: 100%; /* Positions the menu right under the header */
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background-color: var(--clr-background);
-        align-items: flex-end;
-        z-index: 998; /* Below the header (z-index: 1000) */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Step 1b: Show the hamburger icon */
-    .nav-toggle {
-        display: block; /* Show toggle button on mobile */
-    }
-
-    /* Step 1c: Ensure the active menu links stack */
-    .nav-links a {
-        padding: 15px 20px;
-        border-bottom: 1px solid var(--clr-divider);
-        text-align: center;
-        background-color: rgba(var(--clr-surface-rgb), 0.8);
-        width: 100%;
-    }
-    
-    /* Step 1d: JS will add this class to show the menu */
-    .nav-links.active {
-        display: flex !important; /* Overrides 'display: none' when menu is opened */
-    }
-    
-    /* Step 1e: Ensure the header aligns logo and toggle */
-    .nav-container {
-        justify-content: space-between;
-        padding: 10px var(--space-md);
-    }
-}
-
-@media (max-width: 600px) {
-    .footer-nav {
-        /* Forces links to stack vertically */
-        display: flex;
-        flex-direction: column; 
-        align-items: center; /* Centers stacked links */
-    }
-    
-    /* Hide the separators when stacking vertically */
-    .footer-nav .separator {
-        display: none; 
-    }
-    
-    /* Add space between the stacked links */
-    .footer-nav a {
-        padding: 5px 0;
-    }
-}
-
-
 
 
 
@@ -1034,6 +973,100 @@ footer {
     transition: width 0.1s ease-out; /* Smooth transition for filling */
 }
 
+/* Container for the Title and Navigation Buttons */
+.project-nav-header {
+    display: flex;
+    justify-content: space-between; /* Pushes items to the far left and far right */
+    align-items: center; /* Vertically aligns all items */
+    margin-bottom: 40px; /* Space below the navigation header */
+}
+
+/* Style for the Navigation Arrows (Links) */
+.nav-arrow {
+    text-decoration: none;
+    color: var(--clr-accent); /* Use your accent color for visibility */
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    border: 1px solid var(--clr-accent);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.nav-arrow:hover {
+    background-color: var(--clr-accent); 
+    color: var(--clr-background);
+}
+
+
+/* Ensure the title remains central and doesn't get squished */
+.project-nav-header .side-title {
+    flex-grow: 1; /* Allows the title to take up remaining space */
+    text-align: center; /* Centers the title text */
+    margin: 0 20px; /* Add margin to separate title from buttons */
+}
+
+
+@media (max-width: 768px) {
+    /* Step 1a: Hide the navigation links */
+    .nav-links {
+        display: none !important; /* Hides the full navigation list */
+        position: absolute;
+        top: 100%; /* Positions the menu right under the header */
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--clr-background);
+        align-items: flex-end;
+        z-index: 998; /* Below the header (z-index: 1000) */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Step 1b: Show the hamburger icon */
+    .nav-toggle {
+        display: block; /* Show toggle button on mobile */
+    }
+
+    /* Step 1c: Ensure the active menu links stack */
+    .nav-links a {
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--clr-divider);
+        text-align: center;
+        background-color: rgba(var(--clr-surface-rgb), 0.8);
+        width: 100%;
+    }
+    
+    /* Step 1d: JS will add this class to show the menu */
+    .nav-links.active {
+        display: flex !important; /* Overrides 'display: none' when menu is opened */
+    }
+    
+    /* Step 1e: Ensure the header aligns logo and toggle */
+    .nav-container {
+        justify-content: space-between;
+        padding: 10px var(--space-md);
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-nav {
+        /* Forces links to stack vertically */
+        display: flex;
+        flex-direction: column; 
+        align-items: center; /* Centers stacked links */
+    }
+    
+    /* Hide the separators when stacking vertically */
+    .footer-nav .separator {
+        display: none; 
+    }
+    
+    /* Add space between the stacked links */
+    .footer-nav a {
+        padding: 5px 0;
+    }
+}
 
 
 /* Media Query for large screens (Laptops/Desktops) */
@@ -1041,5 +1074,23 @@ footer {
     #skills-container.skills-grid {
         /* Force exactly two equal-width columns (50% each) */
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-nav-header {
+        flex-direction: column; /* Stack vertically on small screens */
+        text-align: center;
+    }
+
+    .project-nav-header .side-title {
+        order: -1; /* Move title to the top */
+        margin-bottom: 20px;
+    }
+
+    .nav-arrow {
+        width: 80%; /* Make buttons full width */
+        margin: 5px 0;
+        justify-content: center;
     }
 }
