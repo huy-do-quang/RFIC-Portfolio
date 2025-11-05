@@ -376,7 +376,7 @@ section[id] {
     border-radius: 12px; 
     
     /* Space between the two education blocks */
-    margin-bottom: 30px; 
+    margin-bottom: 20px; 
     
     /* Subtle shadow to make the card appear raised (optional but recommended) */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
@@ -1090,8 +1090,9 @@ footer {
     display: flex; /* Activate flexbox */
     flex-wrap: wrap; /* Allow wrapping on smaller screens */
     gap: 20px; /* Space between the two sections */
-    margin: 30px auto;
+    margin: 30px auto 10px auto;
     width: 100%;
+
 }
 
 .project-navigation-block {
