@@ -1094,6 +1094,26 @@ footer {
     width: 100%;
 }
 
+.project-navigation-block {
+    /* Use the same padding/margin as your other sections to align with content */
+    padding: 20px 0; 
+    /* A subtle line above navigation to separate it from the main content */
+    border-top: 1px solid var(--clr-divider); 
+    /* Add space above the footer */
+    margin-bottom: 50px; 
+}
+
+.navigation-container {
+    /* Set up Flexbox to spread the content */
+    display: flex;
+    justify-content: space-between; /* Pushes content to the far left and right */
+    align-items: center;
+    /* Ensure it aligns with your main content width */
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px; /* Add internal padding for edge alignment */
+}
+
 
 
 
