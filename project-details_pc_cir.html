@@ -146,36 +146,100 @@ The                 input power divider and output power combiner are realized u
 
         <section class="project-process experience-block">
             <div class="details-content">
-                <h2>Measurement and Results</h2>
+                <h2>Simulation Results</h2>
                 
                 <div class="diagram-flex-wrapper"> 
             
             <div class="diagram-container">
-                <img src="DQH_mymaterial/img/poject_figures/MWTL_Chip micrograph.jpg" 
-                    alt="Chip micrograph" 
+                <img src="DQH_mymaterial/img/poject_figures/MWTL_Sim.png" 
+                    alt="Simulation Results" 
                     class="overall-diagram">
             </div>
             
             <div class="diagram-text-content">
                 <p>
-                    The system uses a retro-directive RF array to achieve WPT by converting received signals (<em>+&theta;<sub>n</sub></em>) into transmitted signals with conjugated phases (<em>-&theta;<sub>n</sub></em> ), 
-                    thus automatically focusing power back to the source. 
-                    <br><br>
-                    The proposed phase conjugator IC (Fig. 2) is the core of this function. 
-                    Operating at 2.4–2.5 GHz, the chip consists of a Mixer for phase conjugation, a VCO, and an isolation enhancement block.
-                    <br><br>
-                    A double-balanced mixer was selected for phase conjugation due to its superior isolation characteristics between ports.
-                    The pMOS VCO was chosen for its low phase noise characteristics.
-                    <br><br>
-                    To reduce the jitter in the conjugated signals and improve beamforming accuracy, a leakage power cancellation technique was incorporated. 
-                    The canceller consists of four blocks: a power divider, an attenuator, a phase shifter, and a power combiner. 
-                    <br><br>
-                    A small portion of the signal is extracted from the input port, and its magnitude and phase are adjusted by the attenuator 
-                    and phase shifter to cancel leakage power at the output using the power combiner
+                    For core mixer, we have a narrow port matching of at least -20dB at both RF and IF frequency. 
+                    The port isolation is around 40dB at 2.5GHz. The conversion gain and compression point is 4dB and 3 dBm respectively.
+                    <br><br><br><br><br><br><br><br><br>
+                    Simulations of LC-VCO show a center frequency of 4.9 GHz, a tuning range of 450 MHz and a phase noise at 1 MHz offset of -106 dBc/Hz.
                 </p>
             </div>
             
         </section>
+
+        <section class="project-process experience-block">
+            <div class="details-content">
+                <h2>Testbenches and Chip Measurement</h2>
+                
+                <div class="diagram-flex-wrapper"> 
+            
+            <div class="diagram-container">
+                <img src="DQH_mymaterial/img/poject_figures/MWTL_Mea.png" 
+                    alt="Chip Measurement" 
+                    class="overall-diagram">
+            </div>
+            
+            <div class="diagram-text-content">
+                <p>
+                    The phase conjugator was fabricated using Samsung LNR28LPP 28-nm RF CMOS technology. 
+                    Beside shows a photograph of the fabricated chip, with a size of 1.3 × 1.65 mm (excluding bonding pads).
+                    <br><br><br><br><br><br><br>
+                    A maximum isolation of 73.9 dB is observed at 2.5 GHz, showing a 33.4-dB improvement due to the canceller. 
+                    Isolation exceeds 56 dB across the 2.4–2.5-GHz range.
+                    The minimum noise figure is 17.5 dB at 2.45 GHz.
+                    <br><br><br><br><br><br><br>
+                    Beside shows the output spectrum of the phase conjugator, with the input RF at 2.5 GHz, output IF at 2.4 GHz, and LO at 4.9 GHz. 
+                    The input signal power was −10 dBm, with a cable loss of 1.3 dB. 
+                    The RF leakage power at the output is near the noise floor (marker M2), while the LO leakage is observed at 4.9 GHz (marker M3).
+                </p>
+            </div>
+            
+        </section>
+
+        <div class="column-3d-view-wrapper">
+            <section class="pcb-3d-view experience-block">
+                <div class="details-content">
+                    <h3>Phase Conjugator Test Board</h3>
+                    <div class="sketchfab-embed-wrapper"> 
+                        <iframe title="MX_CAN" 
+                        frameborder="0" 
+                        allowfullscreen 
+                        mozallowfullscreen="true" 
+                        webkitallowfullscreen="true" 
+                        allow="autoplay; fullscreen; xr-spatial-tracking" 
+                        xr-spatial-tracking 
+                        execution-while-out-of-viewport 
+                        execution-while-not-rendered w
+                        eb-share 
+                        src="https://sketchfab.com/models/b03bfc3df5e94006b9a31b1d9a502ee4/embed"> 
+                        </iframe> 
+                        <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> 
+                            <a href="https://sketchfab.com/3d-models/mx-can-b03bfc3df5e94006b9a31b1d9a502ee4?utm_medium=embed&utm_campaign=share-popup&utm_content=b03bfc3df5e94006b9a31b1d9a502ee4" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> MX_CAN </a> by <a href="https://sketchfab.com/huydoquang?utm_medium=embed&utm_campaign=share-popup&utm_content=b03bfc3df5e94006b9a31b1d9a502ee4" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> huydoquang </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=b03bfc3df5e94006b9a31b1d9a502ee4" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+                </div>
+            </section>
+
+            <section class="pcb-3d-view experience-block">
+                <div class="details-content">
+                    <h3>Circulator Test Board</h3>
+                    <div class="sketchfab-embed-wrapper"> 
+                        <iframe title="WBC" 
+                            frameborder="0" 
+                            allowfullscreen 
+                            mozallowfullscreen="true" 
+                            webkitallowfullscreen="true" 
+                            allow="autoplay; fullscreen; xr-spatial-tracking" 
+                            xr-spatial-tracking 
+                            execution-while-out-of-viewport 
+                            execution-while-not-rendered 
+                            web-share src="https://sketchfab.com/models/72b73849065a4721b2245b4de8377d9c/embed"> 
+                        </iframe> 
+                        <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> 
+                            <a href="https://sketchfab.com/3d-models/wbc-72b73849065a4721b2245b4de8377d9c?utm_medium=embed&utm_campaign=share-popup&utm_content=72b73849065a4721b2245b4de8377d9c" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> WBC </a> by <a href="https://sketchfab.com/huydoquang?utm_medium=embed&utm_campaign=share-popup&utm_content=72b73849065a4721b2245b4de8377d9c" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> huydoquang </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=72b73849065a4721b2245b4de8377d9c" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+                    
+                    
+                </div>
+            </section>
+        </div>
 
 
 

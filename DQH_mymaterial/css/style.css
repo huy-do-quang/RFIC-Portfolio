@@ -1086,6 +1086,27 @@ footer {
 
 
 
+.column-3d-view-wrapper {
+    display: flex; /* Activate flexbox */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Space between the two sections */
+    margin: 30px auto;
+    width: 100%;
+}
+
+
+
+
+/* 4. Optional: Responsive Breakpoint (for mobile) */
+@media (max-width: 768px) {
+    .column-3d-view-wrapper {
+        flex-direction: column; /* Stack vertically on small screens */
+    }
+    .column-3d-view-wrapper .pcb-3d-view {
+        flex: 1 1 100%; /* Make each section take full width */
+    }
+}
+
 /* 4. Media Query for Small Screens */
 @media (max-width: 768px) {
     .diagram-flex-wrapper {
