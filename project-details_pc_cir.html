@@ -97,6 +97,84 @@
             </div>
         </section>
 
+        <section class="project-challenge experience-block">
+            <div class="details-content">
+                <h2>The Challenge</h2>
+                <p>Retrodirective Wireless Power Transfer (RWPT) systems require precise phase conjugation to ensure high-efficiency beam focusing. 
+                    The core challenge in this design is that the input (RF) and output (IF) signals both operate in the 2.4–2.5 GHz ISM band. 
+                    This close frequency proximity causes significant RF signal leakage, which introduces jitter and compromises the required phase conjugation accuracy for beamforming. 
+                    To address this issue, we developed and incorporated a SIC technique into the phase conjugator circuit.</p>
+            </div>
+        </section>
+
+        <section class="project-process experience-block">
+            <div class="details-content">
+                <h2>IC Design & Verification</h2>
+                
+                <div class="diagram-flex-wrapper"> 
+            
+            <div class="diagram-container">
+                <img src="DQH_mymaterial/img/poject_figures/Phase_Conjugator_Overall_Diagram.jpg" 
+                    alt="Block Diagram of Integrated Phase Conjugator and Circulator IC" 
+                    class="overall-diagram">
+            </div>
+            
+            <div class="diagram-text-content">
+                <p>
+                    The system uses a retro-directive RF array to achieve WPT by converting received signals (<em>+&theta;<sub>n</sub></em>) into transmitted signals with conjugated phases (<em>-&theta;<sub>n</sub></em> ), 
+                    thus automatically focusing power back to the source. 
+                    <br><br>
+                    The proposed phase conjugator IC (Fig. 2) is the core of this function. 
+                    Operating at 2.4–2.5 GHz, the chip consists of a Mixer for phase conjugation, a VCO, and an isolation enhancement block.
+                    <br><br>
+                    A double-balanced mixer was selected for phase conjugation due to its superior isolation characteristics between ports.
+                    The pMOS VCO was chosen for its low phase noise characteristics.
+                    <br><br>
+                    To reduce the jitter in the conjugated signals and improve beamforming accuracy, a leakage power cancellation technique was incorporated. 
+                    The canceller consists of four blocks: a power divider, an attenuator, a phase shifter, and a power combiner. 
+                    <br><br>
+                    A small portion of the signal is extracted from the input port, and its magnitude and phase are adjusted by the attenuator 
+                    and phase shifter to cancel leakage power at the output using the power combiner
+                </p>
+            </div>
+            
+        </section>
+
+        <section class="project-process experience-block">
+            <div class="details-content">
+                <h2>Measurement and Results</h2>
+                
+                <div class="diagram-flex-wrapper"> 
+            
+            <div class="diagram-container">
+                <img src="DQH_mymaterial/img/poject_figures/MWTL_Chip micrograph.jpg" 
+                    alt="Chip micrograph" 
+                    class="overall-diagram">
+            </div>
+            
+            <div class="diagram-text-content">
+                <p>
+                    The system uses a retro-directive RF array to achieve WPT by converting received signals (<em>+&theta;<sub>n</sub></em>) into transmitted signals with conjugated phases (<em>-&theta;<sub>n</sub></em> ), 
+                    thus automatically focusing power back to the source. 
+                    <br><br>
+                    The proposed phase conjugator IC (Fig. 2) is the core of this function. 
+                    Operating at 2.4–2.5 GHz, the chip consists of a Mixer for phase conjugation, a VCO, and an isolation enhancement block.
+                    <br><br>
+                    A double-balanced mixer was selected for phase conjugation due to its superior isolation characteristics between ports.
+                    The pMOS VCO was chosen for its low phase noise characteristics.
+                    <br><br>
+                    To reduce the jitter in the conjugated signals and improve beamforming accuracy, a leakage power cancellation technique was incorporated. 
+                    The canceller consists of four blocks: a power divider, an attenuator, a phase shifter, and a power combiner. 
+                    <br><br>
+                    A small portion of the signal is extracted from the input port, and its magnitude and phase are adjusted by the attenuator 
+                    and phase shifter to cancel leakage power at the output using the power combiner
+                </p>
+            </div>
+            
+        </section>
+
+
+
 
 
 

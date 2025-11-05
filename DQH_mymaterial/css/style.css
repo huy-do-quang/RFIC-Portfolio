@@ -1036,6 +1036,75 @@ footer {
 
 
 
+/* 1. New Flex Wrapper to Align Image and Text Side-by-Side */
+.diagram-flex-wrapper {
+    display: flex;
+    align-items: flex-start; /* Aligns content to the top */
+    gap: 30px; /* Space between the image and the text */
+    margin: 15px 0 30px 0; /* Apply the main vertical spacing here */
+}
+
+/* 2. Style the Image Container (Left Side) */
+.diagram-container {
+    /* Now controls the width of the container on the LEFT */
+    width: 50%; 
+    flex-shrink: 0; /* Prevents the container from shrinking */
+    text-align: left; /* Keep the image aligned left within its 50% box */
+    /* Remove the old margin styles that are now on the wrapper */
+    margin: 0; 
+}
+
+.overall-diagram {
+    /* The image itself can now take the full width of its 50% container */
+    max-width: 100%; 
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 3. Style the Text Content (Right Side) */
+.diagram-text-content {
+    width: 50%;
+    /* Ensure text aligns nicely with the image */
+    padding-top: 5px; 
+}
+
+.pdf-container {
+    /* Ensures the iframe is contained properly */
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Specific styling for the PDF iframe */
+.pdf-container iframe {
+    /* Set width to fill container and a fixed height for a good viewing area */
+    width: 100%; 
+    height: 700px; /* Adjust this to your desired viewing height */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+
+/* 4. Media Query for Small Screens */
+@media (max-width: 768px) {
+    .diagram-flex-wrapper {
+        flex-direction: column; /* Stack image and text vertically */
+        gap: 15px;
+    }
+    
+    .diagram-container,
+    .diagram-text-content {
+        width: 100%; /* Both take full width on mobile */
+    }
+    
+    .diagram-container {
+        text-align: center; /* Center the image when stacked */
+    }
+}
+
+
+
 
 /* Ensure the Goal row doesn't break poorly on small screens */
 @media (max-width: 600px) {
