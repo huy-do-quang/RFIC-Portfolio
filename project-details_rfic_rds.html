@@ -163,8 +163,16 @@
                     the phase locating in IF signal is modulated by approximate 2 degress from the other end.
                     LNA with the drive amplifier (DA) circuit has the gain of 43 dB which can push the small signal sensed by antenna up to some extents 
                     such that it goes beyond the P1dB point of -23 dBm and falls into the saturation region in mixer. 
-                    <br><br><br><br><br><br><br><br><br>
-                    Simulations of LC-VCO show a center frequency of 4.9 GHz, a tuning range of 450 MHz and a phase noise at 1 MHz offset of -106 dBc/Hz.
+                    <br><br><br>
+                    The feedforward path is first designed with an attenuator and phase shifter, such that the RF CLC can perform high cancelation 
+                    at every single frequency in the bandwidth of interest. 
+                    The set of achieved phase shifts and attenuations at individual points provides the combined responses as the solid lines. 
+                    The simulation shows that with NCAP = −2 pF, both phase and magnitude LPFN offer the best matching with requirements.
+                    <br><br><br><br>
+                    To prevent LPFN from process voltage temperature (PVT) variations, NCAP was designed with CL metal insulator metal (MIM) capacitor banks 
+                    to provide phase tunability of approximately 50 degrees.
+                    Because of the frequencyplanning of the retro-directive RF system, the LPFN was designed to obtain the first- and second-best isolation at
+                    2.5 and 2.4 GHz, respectively, to improve minimum sensitivity, mitigate linearity requirements, and reduce filtering burden in the RX.
                 </p>
             </div>
             
