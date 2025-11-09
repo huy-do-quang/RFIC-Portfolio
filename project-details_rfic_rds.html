@@ -132,11 +132,39 @@
                     The signal after being translated by mixeris not sufficiently large to convey over the long distance.
                     Thus, magnifying the IF signal to a level is a major job that the PA at transmitting path should involve in
                     <br><br>
-                    Due to the imperfect isolation of circulator, a large TX leakage signal at 2.4 GHz is fed into RX amplifiers
-                    to be responsible for the interference of 2.5 GHz at TX that again falls into a loop and contributes another leakage at 2.5 GHz
-                    Using surface acoustic wave (SAW) filters to reduce the leakage signals is expensive, bulky, and incompatible with CMOS integration. 
-                    Hence, a proposal of 200-MHz Circulator Leakage Canceller (CLC) is our target to serve for leakage suppression in current RDA
+                    Due to the imperfect isolation of circulator, a large TX leakage signal at 2.4 GHz is fed into RX amplifiers.
+                    Using SAW filters to reduce the leakage signals is expensive, bulky, and incompatible with CMOS integration. 
+                    Hence, a proposal of Circulator Leakage Canceller (CLC) is our target to serve for leakage suppression in current RDA
                     system as well as could be applied to other systems having a similar frequency plan.
+                    The proposed CLC consists of a directional coupler (DC), a hybrid coupler, and a low-pass filter network (LPFN) integrated with Negative Capacitor (NCAP).
+                </p>
+            </div>
+            
+        </section>
+
+
+
+        <section class="project-process experience-block">
+            <div class="details-content">
+                <h2>Simulation Results</h2>
+                
+                <div class="diagram-flex-wrapper"> 
+            
+            <div class="diagram-container">
+                <img src="DQH_mymaterial/img/poject_figures/Simulation_Diagram1.png" 
+                    alt="Simulation Results" 
+                    class="overall-diagram">
+            </div>
+            
+            <div class="diagram-text-content">
+                <p>
+                    Simulation of Mixer shows the P1dB of -23 dBm while AM-PM is roughly 0.1 degree/dB. 
+                    This P1dB point shows that for each an increase of 20 dB input power from one end of mixer, 
+                    the phase locating in IF signal is modulated by approximate 2 degress from the other end.
+                    LNA with the drive amplifier (DA) circuit has the gain of 43 dB which can push the small signal sensed by antenna up to some extents 
+                    such that it goes beyond the P1dB point of -23 dBm and falls into the saturation region in mixer. 
+                    <br><br><br><br><br><br><br><br><br>
+                    Simulations of LC-VCO show a center frequency of 4.9 GHz, a tuning range of 450 MHz and a phase noise at 1 MHz offset of -106 dBc/Hz.
                 </p>
             </div>
             
