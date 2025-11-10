@@ -140,6 +140,85 @@
             
         </section>
 
+         <section class="project-process experience-block">
+            <div class="details-content">
+                <h2>Simulation Results</h2>
+                
+                <div class="diagram-flex-wrapper"> 
+            
+            <div class="diagram-container">
+                <img src="DQH_mymaterial/img/poject_figures/Simulation_Diagram2.png" 
+                    alt="Simulation Results" 
+                    class="overall-diagram">
+            </div>
+            
+            <div class="diagram-text-content">
+                <p>
+                    To drive the 8-path network, it requires, 8-phase, 12.5% duty cycle. non-overlapping clock-sets.
+                    We can use an external LO generator followed by duty cycle adjustment.
+                    However, it is not fully integrated. We can also use a VCO along with a divide-by-eight circuit.
+                    However, it requires the VCO to operate at 8 times higher.
+                    The third approach uses an 8-phase VCO.
+                    While this approach consumes power and area, it offers a simple, straightforward design with only 2.4 GHz of oscillation frequency.
+                    <br><br><br>
+                    Beside is 8-phase non-overlapping waveform at the output labeled from LOA1 to LOA8.
+                    The duty cycle is 14% which is closed to the desired 12.5%.
+                    <br>
+                    We made comparison between the gyrator working in regions I (with C = 15pF) and region II (with C=2pF).
+                    Both designs exhibit low loss, good matching, and a nonreciprocal phase difference close to 180°.
+                    However, the Region II design achieves a flatter magnitude and phase response, making it more suitable for wideband applications.
+                    <br><br><br>
+                    The wideband circulator is completed by embedding the gyrator inside a transmission lines loop 
+                    3 ports are placed at λ/4 intervals, and the total transmission line length is 3λ/4.
+                </p>
+            </div>
+            
+        </section>
+
+        <section class="project-process experience-block">
+            <div class="details-content">
+                <h2>Testbenches and Chip Measurement</h2>
+                
+                <div class="diagram-flex-wrapper"> 
+            
+            <div class="diagram-container">
+                <img src="DQH_mymaterial/img/poject_figures/Measured_Diagram2.png" 
+                    alt="Chip Measurement" 
+                    class="overall-diagram">
+            </div>
+            
+            <div class="diagram-text-content">
+                <p>
+                    The Gyrator IC was fabricated in Samsung 28-nm LNRLPP CMOS Process with a core area of 1.2 mm2.
+                    Beside shows a photograph of the fabricated chips.
+                    <br><br><br><br><br><br><br><br>
+                    Measurement result of wideband gyrator shows the minimum insertion loss of around -5.5 dB at the center frequency,
+                    along with a non-reciprocal phase shift, and non-reciprocal phase difference close to 180 degree.
+                    Confirm the gyrator functionality.
+
+                    <br><br><br><br><br>
+                    <li><em>Updating with Wideband Circulator's results...</em></li>
+                </p>
+            </div>
+            
+        </section>
+
+
+        <section class="project-outcome experience-block">
+            <div class="details-content">
+                <h2>Results and Reflection:</h2>
+                <ul class="refelection-list">
+                    <li>We presented a wideband, non-magnetic CMOS circulator IC
+                        by combining a wideband gyrator, asymmetrical TL structure, and NFR integration, we achieved an impressive
+                        600 MHz isolation bandwidth - equivalent to 25% fractional BW.
+                    </li>
+                        <br>
+                    <li><em>Updating with Wideband Circulator's results...</em></li>
+                </ul>
+        
+            </div>
+        </section>
+
 
 
 
